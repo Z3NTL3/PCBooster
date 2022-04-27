@@ -1,6 +1,7 @@
 import os
 from shutil import rmtree as OptimizePC
 import pathlib
+from sys import exit
 # Windows 10 Optimizer
 '''
 Automatically computer optimizer
