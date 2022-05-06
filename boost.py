@@ -1,17 +1,12 @@
-import os
-from shutil import rmtree as OptimizePC
 import pathlib
-from sys import exit
-# Windows 10 Optimizer
-'''
-Automatically computer optimizer
-'''
+import shutil
 
-TMP_Folder = f"{pathlib.Path.home()}\\AppData\\Local\\Temp"
-ez = os.path
+def Cleaner():
+	dirToRemove = "AppData\\Local\\Temp"
+	homedirectory = pathlib.Path.home()
+	directory = f"{homedirectory}\\{dirToRemove}"
 
-if ez.exists(TMP_Folder):
-    OptimizePC(f"{TMP_Folder}", ignore_errors=True) # Ignoring errors like 'This file is in use and removes the files which are not in use'
-    exit(0)
-else:
-    exit(1)
+	shutil.rmtree(directory,True)
+
+if __name__ == "__main__":
+	Cleaner()
